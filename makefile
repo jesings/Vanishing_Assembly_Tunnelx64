@@ -1,6 +1,8 @@
 all: draw.o bresenham.o byte2str.o prgrid.o
 	ld draw.o bresenham.o byte2str.o prgrid.o -o bresenham
+	./bresenham
 	convert image.ppm image.png
+	rm image.ppm
 	display image.png
 draw.o: draw.S
 	gcc draw.S -c -g
